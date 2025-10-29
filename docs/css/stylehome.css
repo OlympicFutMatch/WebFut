@@ -1,0 +1,301 @@
+/* ==================== GLOBAL ==================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333333;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+/* ==================== NUEVO HEADER HOME ==================== */
+.header-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* ocupa gran parte de la pantalla */
+  padding: 0 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f6f7 100%);
+  position: relative;
+}
+
+/* Fondo sutil con una sombra suave en el borde inferior */
+.header-home::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+  pointer-events: none;
+}
+
+/* Título principal */
+.header-home h1 {
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* Subtítulo */
+.header-home p {
+  font-size: clamp(18px, 2vw, 22px);
+  color: #6b7280;
+  margin: 15px 0 40px;
+  font-style: italic;
+  max-width: 600px;
+}
+
+/* Imagen del logo centrada y dominante */
+.header-home img {
+  width: clamp(260px, 40vw, 420px);
+  height: auto;
+  border-radius: 20px;
+  object-fit: contain;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header-home img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .header-home {
+    min-height: 70vh;
+    padding: 40px 20px;
+  }
+
+  .header-home img {
+    width: 85%;
+    margin-top: 10px;
+  }
+
+  .header-home p {
+    margin: 10px 0 30px;
+  }
+}
+
+/* ==================== NAV / TARJETAS ==================== */
+.nav-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 48px;
+  padding: 60px 10% 100px;
+  background-color: #fafafa;
+}
+
+.nav-item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.nav-item img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.nav-item p {
+  font-size: 16px;
+  color: #444444;
+  margin: 0 0 18px;
+}
+
+.nav-item button {
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item button:hover {
+  background-color: #005fcc;
+  transform: scale(1.03);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+  .header-home {
+    padding: 60px 16px 40px;
+  }
+  .header-home h1 {
+    font-size: 34px;
+  }
+  .header-home p {
+    font-size: 15px;
+  }
+  .header-home img {
+    width: 200px;
+  }
+  .nav-home {
+    padding: 40px 16px 80px;
+    gap: 30px;
+  }
+  .nav-item {
+    padding: 18px;
+  }
+  .nav-item p {
+    font-size: 15px;
+  }
+}
+
+/* ==== Ajustes solo para móvil ==== */
+@media (max-width: 768px) {
+  .header-home {
+    padding: 40px 20px;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-home h1 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .header-home p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .header-home img {
+    width: 90%;
+    max-width: 320px;
+    margin-top: 5px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .header-home img:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* ==================== SECCIÓN DE SUSCRIPCIÓN ==================== */
+.subscripcion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 100px 10%;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
+  border-top: 1px solid #e5e7eb;
+}
+
+.subscripcion img {
+  width: 45%;
+  max-width: 400px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.subscripcion img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+}
+
+.subscripcion h2 {
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.subscripcion p {
+  font-size: clamp(16px, 1.2vw, 20px);
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.subscripcion button {
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 36px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.subscripcion button:hover {
+  background-color: #005fcc;
+  transform: scale(1.05);
+}
+
+.subscripcion a {
+  text-decoration: none;
+}
+
+/* Contenedor de texto y elementos */
+.subscripcion .texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 500px;
+}
+
+/* ==================== RESPONSIVE (MÓVIL) ==================== */
+@media (max-width: 768px) {
+  .subscripcion {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .subscripcion img {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .subscripcion .texto {
+    align-items: center;
+    text-align: center;
+  }
+
+  .subscripcion h2 {
+    font-size: 1.8rem;
+  }
+
+  .subscripcion p {
+    font-size: 1rem;
+  }
+}
